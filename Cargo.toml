@@ -17,6 +17,9 @@ default = [
     "full_trace",
     "force_cache",
     "real_balance",
+    "debug",
+    "deployer_is_attacker",
+    "print_pc_on_replay"
 ]
 evm = []
 cmp = []
@@ -47,6 +50,7 @@ sui_support = [
 debug = []
 flashloan_debug = []
 no_etherscan = []
+print_pc_on_replay = []
 
 
 [dependencies]

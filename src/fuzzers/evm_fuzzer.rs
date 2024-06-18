@@ -610,6 +610,9 @@ pub fn evm_fuzzer(
             // fuzzer
             //     .fuzz_loop(&mut stages, &mut executor, state, &mut mgr)
             //     .expect("Fuzzing failed");
+
+            #[cfg(feature = "print_pc_on_replay")]
+            println!("{}", serde_json::to_string(&cov_middleware.borrow_mut().pc_coverage).unwrap());
         }
     }
 }

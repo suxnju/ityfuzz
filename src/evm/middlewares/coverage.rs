@@ -186,10 +186,12 @@ impl CoverageReport {
         info!("============= Coverage Summary =============");
         for (addr, cov) in &self.coverage {
             info!(
-                "{}: {:.2}% Instruction Covered, {:.2}% Branch Covered",
+                "{}: {:.2}% ({}) Instruction Covered, {:.2}% ({}) Branch Covered",
                 addr,
                 (cov.instruction_coverage * 100) as f64 / cov.total_instructions as f64,
-                (cov.branch_coverage * 100) as f64 / cov.total_branches as f64
+                cov.instruction_coverage,
+                (cov.branch_coverage * 100) as f64 / cov.total_branches as f64,
+                cov.branch_coverage
             );
         }
     }
