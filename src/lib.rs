@@ -1,3 +1,10 @@
+#![feature(downcast_unchecked)]
+#![feature(let_chains)]
+#![feature(unchecked_math)]
+#![feature(trait_alias)]
+
+extern crate core;
+
 pub mod cache;
 pub mod r#const;
 pub mod evm;
@@ -17,3 +24,6 @@ pub mod scheduler;
 pub mod state;
 pub mod state_input;
 pub mod tracer;
+
+#[cfg(feature = "sui_support")]
+pub mod r#move;
